@@ -1,0 +1,153 @@
+body {
+    --color-primary: #009579;
+    --color-primary-dark: #007f67;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: url(./login_background.JPG);
+    background-size: cover;
+}
+.container {
+    overflow-y: auto;
+    width: 600px;
+    max-width: 600px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    padding-top: 60px; 
+}
+
+.main-container {
+    padding-top: 2px;
+    margin-top: 2rem;
+}
+
+.column-middle {
+    margin-bottom: 1rem;
+}
+
+.container,
+.form__input,
+.form__button {
+    font: 500 1rem 'Quicksand', sans-serif;
+}
+
+.form__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.nav-items {
+    text-align: center;
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.nav-items {
+    text-align: center;
+    background-color: var(--color-primary); /* Add background color */
+    padding: 10px; /* Add some padding */
+}
+  
+.nav-items a {
+    color: #ffffff; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Add some spacing between links */
+}
+  
+.nav-items a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+#bank-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#bank-form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+  
+#Bank_info {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+}
+  
+#graph-type {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+}  
+  
+#graph-container {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+  
+#chartCanvas {
+    max-width: 200%;
+    height: auto;
+}
+

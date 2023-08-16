@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Results</title>
+    <link rel="stylesheet" href="./src/mainstyle.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-items">
+                <a href="mainpage.html">Home</a>
+            </div>
+        </nav>
+        <section class="main">
+            <div class="main-container">
+                <div class="column-middle">
+                    <h1>Encryption Results</h1>
+                    <div class="result-message">
+                        <p id="decryptedResult">Decrypted Message: </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Retrieve the decrypted message from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const decryptedMessage = urlParams.get('decryptedMessage');
+
+        // Display the decrypted message in the result section
+        const decryptedResultElement = document.getElementById('decryptedResult');
+        decryptedResultElement.textContent = `Decrypted Message: ${decryptedMessage}`;
+    </script>
+
+    <!-- Include your external JavaScript file -->
+    <script src="src/decrypt.js"></script>
+</body>
+</html>

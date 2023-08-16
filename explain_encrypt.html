@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Results</title>
+    <link rel="stylesheet" href="./src/mainstyle.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-items">
+                <a href="mainpage.html">Home</a>
+            </div>
+        </nav>
+        <section class="main">
+            <div class="main-container">
+                <div class="column-middle">
+                    <h1>Encryption Results</h1>
+                    <div class="result-message">
+                        <p id="encryptedResult">Encrypted Message: </p>
+                        <button id="decryptButton" class="form__button" type="button"><b>Decrypt this message</b></button>
+                    </div>
+                    <div class="explanation">
+                        <h2>How RSA Encryption Works</h2>
+                        <p>RSA (Rivest-Shamir-Adleman) is a widely used asymmetric encryption algorithm that involves two keys: a public key and a private key. The public key is used for encryption, while the private key is used for decryption.</p>
+                        <p>The sender uses the recipient's public key to encrypt the message, making it secure for transmission. The recipient then uses their private key to decrypt the message and retrieve the original content.</p>
+                        <p>This encription method altough may seem comilcated is quite easy to understand and can be broken down into key steps. Key generation, Encripting, And Decrypting</p>
+                        <h2>Key Generation</h2>
+                        <p>Upon generation of key(First time use of encription), the program or user will chose 2 large prime numbers p and q. These two numbers are the fundemntals for the key generation and thus are kept secure form others.</p>
+                        <p>Next we find what we call n by multiplying p and q together, this number n serves as a public key used for encription and decryption</p>
+                        <p>Next we find will be caulcaulting a secret number often times in the notaion of λ(n), done by the calculation λ(n) = lcm(λ(p), λ(q))</p>
+                        <p>This number serves as an end point of the possible numbers that e or the public key will be chosen from 2 ~ λ(n) that is coprime. This number e or the public key will be shared with others and used to encript but has no ablity to decrypt messages that have been encripted by the public key</p>
+                        <p>Lastly is the generation of the private key(used for decryption) and is calculated by d ≡ e−1 (mod λ(n))</p>
+                        <p>now at this point you may be thinking that if the user could find p and q from the encripted text due to it being multiples of eachother, but this idea has one huge flaw and that is the fact that inorder to reverse the encription without the key it would reqire testing of every combination of prime numbers this meaing that it would take pain stainking time</p>
+                        <h2>How RSA Encryption Works</h2>
+                        <p>The first step of encription requires the program to turn a message that is sent into numbers</p>
+                        <p>next the program will use the public key that is sent from the intended recipient to generate encripted text</p>
+                        <p>thus if any users were snooping in the network between the sender and the recipient it would be an encripted text</p>
+                        <h2>How RSA Decryption Works</h2>
+                        <p>Much like encription it works simmalry but this time you will be reciving the encripted text form a user that hopefully used your public key to encript</p>
+                        <p>Using this and the private key that only you have you are able to unlock the message much like will be demonstarted in the next step of the website</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Retrieve the encrypted message from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const encryptedMessage = urlParams.get('encryptedMessage');
+
+        // Display the encrypted message in the result section
+        const encryptedResultElement = document.getElementById('encryptedResult');
+        encryptedResultElement.textContent = `Encrypted Message: ${encryptedMessage}`;
+
+        const decryptButton = document.getElementById('decryptButton');
+        decryptButton.addEventListener('click', function() {
+            // Redirect to the decryption page with the encrypted message
+            window.location.href = `decrypt.html?encryptedMessage=${encodeURIComponent(encryptedMessage)}`;
+        }); 
+    </script>
+
+    <!-- Include your external JavaScript file -->
+    <script src="src/encrypt.js"></script>
+</body>
+</html>
